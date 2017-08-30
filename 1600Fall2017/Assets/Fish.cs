@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class Fish : Animal {
 
-    void Swim() { // Declare function "Swims"
-        print(this.name + " Swims");
-    }
-    
-    void Start() {
+    public override void Start() {
+        base.Start();
         Swim();
+    }
+
+    void Swim() {
+        print(this.name + " Swims");
     }
 
 }
