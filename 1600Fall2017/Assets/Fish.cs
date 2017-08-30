@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Fish : Animal {
 
-    void Swim() {
+    void Swim() { // Declare function "Swims"
         print(this.name + " Swims");
     }
     

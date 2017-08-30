@@ -7,10 +7,23 @@ public class Animal : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		Die();
+		Eats();
+		Sleeps();
+
 	}
 
-	void Die ()	{
+	void Die ()	{ // Declares function "Dies"
 		print(this.name + " Dies");
+
+	}
+
+	void Eat ()	{ // Declares function "Eats"
+		print(this.name + " Eats");
+
+	}
+
+	void Sleep () { // Declares function "Sleeps"
+		print(this.name + " Sleeps");
 
 	}
 
