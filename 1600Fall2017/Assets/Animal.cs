@@ -5,10 +5,10 @@ using UnityEngine;
 public class Animal : MonoBehaviour {
 
 	// Use this for initialization
-	void Start () {
+	public virtual void Start () {
 		Die();
-		Eats();
-		Sleeps();
+		Eat();
+		Sleep();
 
 	}
 
