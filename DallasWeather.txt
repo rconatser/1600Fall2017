@@ -1,0 +1,24 @@
+Fri
+Mostly Sunny
+90°72°
+Sat
+Partly Cloudy
+90°72°
+Sun
+Partly Cloudy
+90°73°
+Mon
+Partly Cloudy
+91°72°
+Tue
+Scattered Thunderstorms
+89°67°
+Wed
+Sunny
+84°64°
+Thu
+Sunny
+83°65°
+Fri
+Sunny
+85°63°

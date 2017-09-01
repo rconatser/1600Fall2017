@@ -1,0 +1,31 @@
+Fri
+Sunny
+105°83°
+
+Sat
+Sunny
+103°81°
+
+Sun
+Mostly Sunny
+101°79°
+
+Mon
+Sunny
+100°81°
+
+Tue
+Sunny
+104°83°
+
+Wed
+Partly Cloudy
+103°83°
+
+Thu
+Partly Cloudy
+104°83°
+
+Fri
+Mostly Sunny
+102°81°
