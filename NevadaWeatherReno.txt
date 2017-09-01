@@ -1,0 +1,31 @@
+Fri
+Sunny
+94°62°
+
+Sat
+Sunny
+97°63°
+
+Sun
+Mostly Sunny
+96°65°
+
+Mon
+Mostly Sunny
+96°64°
+
+Tue
+Mostly Sunny
+95°63°
+
+Wed
+Mostly Sunny
+93°63°
+
+Thu
+Mostly Sunny
+89°61°
+
+Fri
+Sunny
+88°60°
