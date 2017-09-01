@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/* This is a parent class, it dictates what all child classes do unless overridden. 
+All children classes inherite the functions/properties of the parent class.
+*/
+
+
 public class Animal : MonoBehaviour {
 
 	// Use this for initialization
