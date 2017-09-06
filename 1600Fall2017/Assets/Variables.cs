@@ -25,11 +25,11 @@ public class Variables : MonoBehaviour {
 
 		example = 5; /*Overrides the previously stated integer value of One.
                        Does not need to be "int example = 5" because it has already been initialized as an integer.*/
-        print(this.example + " is the value of example, and the value of exampleTwo is " + this.exampleTwo);
+        print(example + " is the value of example, and the value of exampleTwo is " + exampleTwo);
         
-        print(this.firstName + " " + this.lastName + " is your name.");
+        print(firstName + " " + lastName + " is your name.");
    
-        print(this.pi + " this is the value of pi.");
-        print(this.a + " is a boolean. They're for true and false statements!");
+        print(pi + " this is the value of pi.");
+        print(a + " is a boolean. They're for true and false statements!");
     }
 }    // end of program
