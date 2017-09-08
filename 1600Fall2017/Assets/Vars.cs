@@ -8,15 +8,10 @@ public class Vars : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		if(health > 0){
-			health -= 0.1f; // f means float
-		} else {
-			print("You're Dead!");
-		}	
+
+	void OnTriggerEnter(){
+		health += 20; // adds 20 to health
 	}
 }
