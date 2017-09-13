@@ -8,7 +8,7 @@ public class ifStatement : MonoBehaviour {
 	public Text input;
 	public string password = "password";
 
-	void Start(){
+	void Update(){
 		if(input.text == password) {
 			print("You know the password.");
 		}else{

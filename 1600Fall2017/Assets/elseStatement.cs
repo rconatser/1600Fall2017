@@ -22,13 +22,6 @@ public class elseStatement : MonoBehaviour {
             print("Try again."); // if the if statement fails/is false, it will print this in all over scenarios
         }
 
-    //TWO
-        if(input.text == hello){
-            print("Hello to you too!");
-        }else{
-            print("What?!"); // prints this if the user doesn't type "Hello" exactly. It is case sensitive.
-        }
-
     //THREE
         if(abc){
             print("The bool is true.");
@@ -42,6 +35,15 @@ public class elseStatement : MonoBehaviour {
         }else{
             print("These numbers do not work. Try again."); // Will print this in all instances where the two divided doesn't equal two.
         }
+    }
+
+    void Update(){
+    //TWO
+        if(input.text == hello){
+            print("Hello to you too!");
+        }else{
+            print("What?!"); // prints this if the user doesn't type "Hello" exactly. It is case sensitive.
+        }
 
     //FIVE
         if(input.text == password){
@@ -49,8 +51,6 @@ public class elseStatement : MonoBehaviour {
         }else{
             print("The password is incorrect. Try again."); // Will print this when anything but "password" is typed in by the user.
         }
-
-
-	}
+    }
 
 }
