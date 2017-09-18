@@ -5,9 +5,8 @@ using UnityEngine;
 public class weaponSwitch : MonoBehaviour {
 
 	public string[] weapons; // [] makes it an array
-	public int i = 0; // short for indexer
 
-	public void Start(){
+	public void myWeaponSwitch(int i){
 		switch(weapons[i]){
 			case "Missile": 
 				print("Missile");
