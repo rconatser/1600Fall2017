@@ -1,0 +1,3 @@
+Foreach loops
+Foreach loops allow you to use arrays to simplify the code if you plan on using similar code over and over. For instance, you can use an array of strings and use a foreach loop to print the item for every string in the array. This will continue until it has looped this code throughout each point in the array. 
+To simplify, foreach loops are used typically to loop code for every item in a set as opposed to running “X” number of times like other loops. On a side note, they can also be used for vector processing (or array processing) typically used with video game consoles and in graphics. 
