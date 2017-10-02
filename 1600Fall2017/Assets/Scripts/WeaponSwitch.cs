@@ -4,22 +4,32 @@ using UnityEngine;
 
 public class WeaponSwitch : MonoBehaviour {
 
-	public string[] weapons;
+    public List<GameObject> weapons;
+
+    void OnTriggerEnter(Collider _weapon)
+    {
+        weapons.Add(_weapon.gameObject);
+    }
 
 	public void MyWeaponSwitch (int i){
-		switch (weapons[i])
+		switch (weapons[i].name) // gets gameObject's name
 		{
-			case "Missile":
-				print("Missile");
-				break;
+			// 	HARD CODING = NO 
+			// case "MissileWeaponHolder":
+			// 	print("Missile");
+			// 	break;
 
-			case "Plasma":
-				print("Plasma");
-				break;
+			// case "PlasmaWeaponHolder":
+			// 	print("Plasma");
+			// 	break;
 
-			default:
-				print("You have no other weapons.");
-				break;
+			// case "GunWeaponHolder":
+			// 	print("Gun");
+			// 	break;
+
+			// default:
+			// 	print("You have no other weapons.");
+			// 	break;
 		}
 	}
 }
