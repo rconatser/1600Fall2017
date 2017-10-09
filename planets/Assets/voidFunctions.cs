@@ -42,9 +42,9 @@ public class voidFunctions : MonoBehaviour {
         score();
         walk();
         sprint();
-        shrink();
-        grow();
 
+        shrink(1); 
+        grow(1);
 		armor(3); // will add 75 to health 
 		pScore(15); // will return 15.
 		helloWorld("hi"); // has to put parameter for function to work
@@ -145,23 +145,27 @@ public class voidFunctions : MonoBehaviour {
  
 
  
-    public void shrink(){ // will see if user has received pwrDown
+    public float shrink(float size){ // will see if user has received pwrDown
 	//will be seen by all scripts
-
+		size = 1;
         if(pwrDown == true){
             transform.localScale += new Vector3(-0.5F, -0.5F, -0.5F); 
+			size -= 0.5F;
         } // looks at current scale of a game object, and transforms / scales it down by 0.5.
+		return size;
     }     // vector3 manipulates 3D vectors/points on game object
  
 
  
-    public void grow(){
- 
+    public float grow(float size){
+		size = 1;
         if(pwrUp == true){
             transform.localScale += new Vector3(0.5F, 0.5F, 0.5F);
+			size += 0.5F;
         }// looks at current scale of a game object, and transforms / scales it up by 0.5.
- 
+		return size;
     }    // vector3 manipulates 3D vectors/points on game object
+
  
 
 	private int numApples(int amount){ // this function will only be seen by this class
