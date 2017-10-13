@@ -12,6 +12,8 @@ public class voidFunctions : MonoBehaviour {
 	public int playerScore = 0; // defaults player's score to zero
 	public int otherPlayerHealth = 100; // other player's health default to 100
     public float walkSpeed = 5f; // sets default walk speed to 5
+    public bool pwrDown;
+    public bool pwrUp;
 
 	//Im making most of my variables if not all public as I may use them in other scripts. If I wanted them to only be used in this script, I'd make it private.
 
@@ -27,8 +29,9 @@ public class voidFunctions : MonoBehaviour {
         damage();
         score();
         armor();
-        crouch();
-        prone();
+        shrink();
+        grow();
+
 
     }
 
@@ -76,25 +79,29 @@ public class voidFunctions : MonoBehaviour {
     }
 
     void walk(){ // just learning about grabbing input keys... Will figure out how to input this into actual movement soon!
-        if(Input.getKey("w") || Input.getKey("a") || Input.getKey("s") || Input.getKey("d") ){
+        if(Input.GetKey("w") || Input.GetKey("a") || Input.GetKey("s") || Input.GetKey("d") ){
            // sees if player pressed the W, S, A, or D key(s). If so, it'll automatically have them walk at a speed of 5.
             walkSpeed = 5; 
         }
     }
 
     void sprint(){ // just learning about grabbing input keys... Will figure out how to input this into actual movement soon!
-        if(Input.getKeyDown(KeyCode.LeftShift)){ // sees if player holds down shift, changes speed to 10!
+        if(Input.GetKeyDown(KeyCode.LeftShift)){ // sees if player holds down shift, changes speed to 10!
             walkSpeed = 10;
         };
     }
 
-    void crouch(){
+    void shrink(){ // will see if user has received pwrDown
+        if(pwrDown == true){
+            transform.localScale += new Vector3(-0.5F, -0.5F, -0.5F); 
+        } // looks at current scale of a game object, and transforms / scales it down by 0.5.
+    }     // vector3 manipulates 3D vectors/points on game object
 
-    }
-
-    void prone(){
-
-    }
+    void grow(){
+        if(pwrUp == true){
+            transform.localScale += new Vector3(0.5F, 0.5F, 0.5F);
+        }// looks at current scale of a game object, and transforms / scales it up by 0.5.
+    }    // vector3 manipulates 3D vectors/points on game object
 
     void Update(){
         walk();
