@@ -4,13 +4,7 @@ using UnityEngine;
 
 public class functionsReturn : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	Vector3 coords;
+	string[] position = {"X","Y","Z"};
+
 }
