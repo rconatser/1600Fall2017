@@ -19,7 +19,7 @@ public class characterControl : MonoBehaviour {
 		if(characterController.isGrounded){ // looks to see if character is on ground first
 			move.x = Input.GetAxis("Horizontal") * speed * Time.deltaTime; // if so, can move
 
-			if(Input.GetKeyDown("space")){ // if its on ground, can jump
+			if(Input.GetKey(KeyCode.Space)){ // if its on ground, can jump
 				move.y += jumpForce * Time.deltaTime; // creates jumpforce (shoots up)
 			}
 		}
