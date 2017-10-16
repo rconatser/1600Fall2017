@@ -14,7 +14,7 @@ public class characterControl : MonoBehaviour {
 	}
 
 	void FixedUpdate () {
-		move.y = -gravity * Time.deltaTime; // will slow this down and make it coorelate with time
+		move.y -= gravity * Time.deltaTime; // will slow this down and make it coorelate with time
 
 		if(characterController.isGrounded){ // looks to see if character is on ground first
 			move.x = Input.GetAxis("Horizontal") * speed * Time.deltaTime; // if so, can move
