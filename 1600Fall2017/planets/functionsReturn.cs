@@ -12,13 +12,13 @@ public class functionsReturn : MonoBehaviour {
 		getX(0); // runs getX function with parameter of 0. Hard coded...
 		getY(1); // runs getY function with parameter of 1. Hard coded...
 		getZ(2); // runs getZ function with parameter of 2. Hard coded...
-		getCoords(); // gets overall coords from player in a more efficient manor.
+		getCoords(x,y,z); // gets overall coords from player in a more efficient manor.
 		damageDealt(27); // damage dealt to player function, 27 will assign itself to damage variable. Health is defaulted to 100.
 
 	}
 
 		int getX(int x = 0){
-			position[0] = player.getX; // assigns X value to first slot in array
+			position[0] = coords.x; // assigns X value to first slot in array
 			return x;
 		}
 
