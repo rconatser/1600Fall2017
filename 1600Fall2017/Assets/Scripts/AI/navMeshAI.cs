@@ -10,6 +10,6 @@ public class navMeshAI : characterControl {
 	public Vector3 moveCamera; 
 	void Update () {
 		agent.destination = player.position; // gets camera to follow player
-		moveCamera.y = move;
+		
 	}
 }
