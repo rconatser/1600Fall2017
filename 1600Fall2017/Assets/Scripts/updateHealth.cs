@@ -40,9 +40,10 @@ public class updateHealth : MonoBehaviour {
 
 	IEnumerator powerDownBar(){
 		float tempAmount = powerLevel;
+		float fillAmount = healthBar.fillAmount;
 		while(tempAmount > 0){
-			tempAmount -= upAmount; // takes away the fillAmount from the barTime
-			healthBar.fillAmount -= tempAmount;
+			fillAmount = tempAmount - upAmount; // takes away the fillAmount from the barTime
+			healthBar.fillAmount = fillAmount;
 			yield return new WaitForSeconds(barTime); // waits for time (object)
 		}
 	}
