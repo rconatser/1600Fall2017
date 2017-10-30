@@ -11,13 +11,13 @@ public class updateHealth : MonoBehaviour {
 	public float upAmount = 0.01f;
 	public enum powerUpType{ // like an array/list
 		powerUp, // choice 1 label
-		powerDown // choice 2 label
+		powerDown, // choice 2 label
 	}
 
-	public powerUpType powerUp; // will create a drop down in unity
+	public powerUpType power; // will create a drop down in unity
 
 	void OnTriggerEnter(){
-		switch (powerUp)
+		switch (power)
 		{
 			case powerUpType.powerUp:
 				StartCoroutine(powerUpBar());
