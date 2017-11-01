@@ -22,11 +22,11 @@ public class functionsWReturns : MonoBehaviour {
     getZ(2); // runs getZ function with parameter of 2. Hard coded...
     getCoords(0,0,0); // gets overall coords from player in a more efficient manor.
     damageDealt(27); // damage dealt to player function, 27 will assign itself to damage variable. Health is defaulted to 100.
-    getDamage(5,100);
-    getUsername("user");
-    getPassword("pass");
+    getDamage(5,100); 
+    getUsername("user"); // Compares input to user and pass to see if user can play
+    getPassword("pass");// Compares input to user and pass to see if user can play
     getPlayerName("playerOne");
-
+    getHealth(0.5f); //works with health bars, very minimal.
 
   }
  
@@ -69,7 +69,7 @@ public class functionsWReturns : MonoBehaviour {
 
     string getUsername(user){
         getPassword("pass");
-        if(input.text == user && input.text == pass){
+        if(input.text == user && input.text == pass){ // compares with password as well
             canPlay = true;
         }
         return canPlay;
@@ -77,7 +77,7 @@ public class functionsWReturns : MonoBehaviour {
 
     string getPassword(pass){
         getUsername("user");
-        if(input.text == pass && input.text == user){
+        if(input.text == pass && input.text == user){ // compares with username as well
             canPlay = true;
         }
         return canPlay;
