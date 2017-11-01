@@ -13,6 +13,7 @@ public class functionsWReturns : MonoBehaviour {
   public bool canPlay;
   public string user;
   public string pass;
+  public Image healthBar;
  
   public void start(){
  
@@ -22,6 +23,10 @@ public class functionsWReturns : MonoBehaviour {
     getCoords(0,0,0); // gets overall coords from player in a more efficient manor.
     damageDealt(27); // damage dealt to player function, 27 will assign itself to damage variable. Health is defaulted to 100.
     getDamage(5,100);
+    getUsername("user");
+    getPassword("pass");
+    getPlayerName("playerOne");
+
 
   }
  
@@ -63,17 +68,29 @@ public class functionsWReturns : MonoBehaviour {
     }
 
     string getUsername(user){
-        if(input.text == user){
+        getPassword("pass");
+        if(input.text == user && input.text == pass){
             canPlay = true;
         }
         return canPlay;
     }
 
     string getPassword(pass){
-        if(input.text == pass){
+        getUsername("user");
+        if(input.text == pass && input.text == user){
             canPlay = true;
         }
         return canPlay;
+    }
+
+    string getPlayerName(string playerName){
+        playerName = input.text;
+        return playerName;
+    }
+
+    float getHealth(float health){
+        health = healthBar.fillAmount;
+        return health;
     }
  
 }
