@@ -9,5 +9,6 @@ public class doesDamage : MonoBehaviour {
 
 	void Update () {
 		transform.Rotate(Vector3.right * Time.deltaTime * speed); // makes it spin
+		
 	}
 }
