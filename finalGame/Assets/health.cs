@@ -7,21 +7,18 @@ public class health : MonoBehaviour {
 
 	public Image healthBar;
 	public GameObject gameOverUI;
-	public Text coinNum;
 	public Text endGameText;
-	public int totalCoinValue, coinValue;
 	public float powerLevel = 0.5f;
 	public float upAmount = 0.01f;
 	public enum powerUpType{ // like an array/list
 		powerUp, // choice 1 label
 		powerDown, // choice 2 label
-		collectCoin,
 		Win,
 	}
 
 	public powerUpType power; // will create a drop down in unity
 
-	void OnTriggerEnter(){
+	public void OnTriggerEnter(){
 		switch (power)
 		{
 			case powerUpType.powerUp:
@@ -31,10 +28,6 @@ public class health : MonoBehaviour {
 			case powerUpType.powerDown:
 				StartCoroutine(powerDownBar());
 				break;
-
-			case powerUpType.collectCoin:
-				StartCoroutine(collectCoin());
-				break;
 	
 			case powerUpType.Win:
 				endGame("You Win!");
@@ -43,7 +36,7 @@ public class health : MonoBehaviour {
 
 	}
 
-	IEnumerator powerUpBar(){
+	public IEnumerator powerUpBar(){
 		float tempAmount = healthBar.fillAmount + powerLevel;
 		if(tempAmount > 1){
 			tempAmount = 1;
@@ -55,7 +48,7 @@ public class health : MonoBehaviour {
 		}
 	}
 
-	IEnumerator powerDownBar(){
+	public IEnumerator powerDownBar(){
 		float tempAmount = healthBar.fillAmount - powerLevel;
 		if(tempAmount < 0){
 			tempAmount = 0;
@@ -67,20 +60,11 @@ public class health : MonoBehaviour {
 		}
 
 		if(healthBar.fillAmount == 0){ // will pop up when health is zero!
-			endGame("Game Over");
+			endGame("Game Over!");
 		}
 	}
 
-	IEnumerator collectCoin(){
-		totalCoinValue = int.Parse(coinNum.text);
-		int tempAmount = totalCoinValue + coinValue;
-		while(totalCoinValue <= tempAmount){
-			coinNum.text = (totalCoinValue++).ToString();
-			yield return new WaitForFixedUpdate();
-		}
-	}
-
-	void endGame(string _text){
+	public void endGame(string _text){
 		endGameText.text = _text;
 		gameOverUI.SetActive(true);
 		moveCharacter.gameOver = true;
