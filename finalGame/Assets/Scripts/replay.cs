@@ -11,7 +11,7 @@ public class replay : MonoBehaviour {
 	public static Vector3 startPosition;
 	private float fillAmount;
 
-	void Awake(){
+	public void Awake(){
 		startPosition = player.position;
 		fillAmount = UIBar.healthBar.fillAmount;
 
