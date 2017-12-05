@@ -6,8 +6,8 @@ public class moveCharacter : MonoBehaviour {
 	public CharacterController characterController;
 	public static bool gameOver; // by default bool is false
 	public float gravity = 9.81f; // creates a gravity component, defaults to 9.81
-	public float speed = 10;
-	public float jumpForce = 50; // creates jump 
+	public float speed = 50;
+	public float jumpForce = 125; // creates jump 
 	public Vector3 move; // temp variable that will store temp data
 
 	void Update () {

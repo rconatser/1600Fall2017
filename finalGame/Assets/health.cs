@@ -13,7 +13,7 @@ public class health : MonoBehaviour {
 	public enum powerUpType{ // like an array/list
 		powerUp, // choice 1 label
 		powerDown, // choice 2 label
-		Win
+		Win,
 	}
 
 	public powerUpType power; // will create a drop down in unity
