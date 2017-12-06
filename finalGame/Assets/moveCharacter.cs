@@ -12,10 +12,10 @@ public class moveCharacter : MonoBehaviour {
 	public float jumpForce = 125; // creates jump 
 	public Vector3 move; // temp variable that will store temp data
 
-	void Start()
+/*	void Awake()
 	{
-		//playerName.getPlayerName(getName.text); // assigns input to string name.
-	}
+		playerName.getPlayerName(getName.text); // assigns input to string name.
+	} */
 
 	void Update () {
 		move.y -= gravity * Time.deltaTime; // will slow this down and make it coorelate with time

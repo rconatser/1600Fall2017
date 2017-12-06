@@ -14,6 +14,7 @@ public class replay : MonoBehaviour {
 	void Awake(){
 		startPosition = player.position;
 		fillAmount = UIBar.healthBar.fillAmount;
+		gameOverUI.SetActive(false);
 
 	}
 
