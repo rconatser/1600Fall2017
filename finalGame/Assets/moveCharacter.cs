@@ -10,12 +10,8 @@ public class moveCharacter : MonoBehaviour {
 	public float gravity = 9.81f; // creates a gravity component, defaults to 9.81
 	public float speed = 50;
 	public float jumpForce = 125; // creates jump 
+	public string newName;
 	public Vector3 move; // temp variable that will store temp data
-
-/*	void Awake()
-	{
-		playerName.getPlayerName(getName.text); // assigns input to string name.
-	} */
 
 	void Update () {
 		move.y -= gravity * Time.deltaTime; // will slow this down and make it coorelate with time

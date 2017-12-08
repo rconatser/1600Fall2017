@@ -15,7 +15,6 @@ public class replay : MonoBehaviour {
 		startPosition = player.position;
 		fillAmount = UIBar.healthBar.fillAmount;
 		gameOverUI.SetActive(false);
-
 	}
 
 	public void Click(){

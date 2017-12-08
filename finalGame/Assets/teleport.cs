@@ -4,9 +4,13 @@ using UnityEngine;
 
 public class teleport : MonoBehaviour {
 
+	public GameObject teleportOne;
+	public Transform player;
+
 	
-	void OnTriggerEnter(){
-    	replay.startPosition = transform.position; // means it's going to be equal to our check point's position
-    
+	void OnTriggerEnter(){	
+		if(teleportOne){
+			player.position = new Vector3(-18,224,-55); // teleports player to new coordinates
+		}
   	}
 }
