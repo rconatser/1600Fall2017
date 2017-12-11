@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class changeColor : MonoBehaviour {
 	
-	public Color[] lifeColors = new Color[4]; // creates an array to hold the 4 Colors used for health bar color/lives text
-	public Color[] groundColor = new Color[5]; // creates another array for ground color later in level
+	public static Color[] lifeColors = new Color[4]; // creates an array to hold the 4 Colors used for health bar color/lives text
+	public static Color[] groundColor = new Color[5]; // creates another array for ground color later in level
 
 	void Start(){
 		lifeColors[0] = new Color(114,255,189,255); // deepish green color
