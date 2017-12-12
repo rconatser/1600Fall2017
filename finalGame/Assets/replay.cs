@@ -19,9 +19,9 @@ public class replay : MonoBehaviour {
 	}
 
 	public void Click(){
-		if(health.Lives == 0){
+		if(health.i == 3){
 			player.position = new Vector3(-81,10,-55); // puts character back at beginning of level
-			health.Lives = 3; // resets lives back to 3.
+			health.i = 0;
 			gameReallyOverUI.SetActive(false);
 			moveCharacter.gameOver = false;
 		}else{
@@ -29,8 +29,7 @@ public class replay : MonoBehaviour {
 			player.position = startPosition;
 			UIBar.healthBar.fillAmount = fillAmount;
 			gameOverUI.SetActive(false);
-			health.Lives--;
-		//	health.i++;
+			health.i++;
 		}
 	}
 }
