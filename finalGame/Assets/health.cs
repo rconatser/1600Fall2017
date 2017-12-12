@@ -10,10 +10,12 @@ public class health : MonoBehaviour {
 	public Text endGameText;
 	public Text gameReallyOver;
 	public float powerLevel = 0.2f;
+	public float instantDeath = 1f;
 	public float upAmount = 0.01f;
 	public static int i = 0;
 	public Text numberLives;
 	public GameObject gameReallyOverUI;
+	public GameObject discoFloor;
 	public int[] Life = {3,2,1,0};
 	public Color[] lifeColors = new Color[4]; // creates an array to hold the 4 Colors used for health bar color/lives text
 	public Color[] groundColor = {Color.white, Color.yellow, Color.green, Color.cyan, Color.blue}; // creates another array for ground color later in level
@@ -28,6 +30,7 @@ public class health : MonoBehaviour {
 	public enum powerUpType{ // like an array/list
 		powerUp, // choice 1 label
 		powerDown, // choice 2 label
+		instaDeath,
 		Win
 	}
 
@@ -40,6 +43,9 @@ public class health : MonoBehaviour {
 				break;
 			case powerUpType.powerDown:
 				StartCoroutine(powerDownBar());
+				break;
+			case powerUpType.instaDeath:
+				StartCoroutine(instaDie());
 				break;
 			case powerUpType.Win:
 				endGame("You Win!");
@@ -75,10 +81,19 @@ public class health : MonoBehaviour {
 		}
 	}
 
+	public IEnumerator instaDie(){
+		healthBar.fillAmount -= instantDeath;
+		yield return new WaitForSeconds(instantDeath);
+
+		if(healthBar.fillAmount == 0){ // will pop up when health is zero!
+			endGame("Game Over");
+		}
+	}
+
 	void Update(){		
 		if(i <= 3){
 			numberLives.color = lifeColors[i];
-			numLives(Life[i].ToString());
+			numLives(Life[i].ToString()); // converts life (int) array to string so it can be read by numberLives.text
 		}
 		if(i == 3){ // if lives ran out... (would read 0)
 			moveCharacter.gameOver = true;
