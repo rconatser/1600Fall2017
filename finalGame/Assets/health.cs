@@ -15,11 +15,8 @@ public class health : MonoBehaviour {
 	public static int i = 0;
 	public Text numberLives;
 	public GameObject gameReallyOverUI;
-	public GameObject discoFloor;
 	public int[] Life = {3,2,1,0};
 	public Color[] lifeColors = new Color[4]; // creates an array to hold the 4 Colors used for health bar color/lives text
-	public Color[] groundColor = {Color.white, Color.yellow, Color.green, Color.cyan, Color.blue}; // creates another array for ground color later in level
-
 	void Start(){
 		lifeColors[0] = new Color(19f/255f,189f/255f,0f,1f); // deepish green color
 		lifeColors[1] = new Color(189f/255f,189f/255f,0f,1f); // yellow-green color
