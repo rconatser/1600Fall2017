@@ -12,10 +12,15 @@ public class health : MonoBehaviour {
 	public float powerLevel = 0.2f;
 	public float instantDeath = 1f;
 	public float upAmount = 0.01f;
+	public GameObject discoFloor;
+	public int a = 0; // for color loops
+	public float colorChange = 1f; // 1 second
+	public Color[] groundColor = {Color.yellow, Color.green, Color.cyan, Color.blue, Color.white}; // creates another array for ground color later in level
+
 	public static int i = 0;
 	public Text numberLives;
 	public GameObject gameReallyOverUI;
-	public static int[] Life = {3,2,1,0};
+	public int[] Life = {3,2,1,0};
 	public Color[] lifeColors = new Color[4]; // creates an array to hold the 4 Colors used for health bar color/lives text
 	void Start(){
 		lifeColors[0] = new Color(19f/255f,189f/255f,0f,1f); // deepish green color
@@ -28,7 +33,8 @@ public class health : MonoBehaviour {
 		powerUp, // choice 1 label
 		powerDown, // choice 2 label
 		instaDeath,
-		Win
+		Win,
+		disco
 	}
 
 	public powerUpType power; // will create a drop down in unity
@@ -45,8 +51,11 @@ public class health : MonoBehaviour {
 				StartCoroutine(instaDie());
 				break;
 			case powerUpType.Win:
-				i = Life.Length;
+				i = 3;
 				reallyEndGame("You Win!");
+				break;
+			case powerUpType.disco:
+				StartCoroutine(colorLoop());
 				break;
 		}
 	}
@@ -74,7 +83,7 @@ public class health : MonoBehaviour {
 		if(healthBar.fillAmount == 0){ // will pop up when health is zero!
 			endGame("Game Over");
 		}
-		if(i == Life.Length){ // if lives ran out... (would read 0)
+		if(i == 3){ // if lives ran out... (would read 0)
 			reallyEndGame("Starting from the beginning...");
 		}
 	}
@@ -85,9 +94,16 @@ public class health : MonoBehaviour {
 			if(healthBar.fillAmount == 0){ // will pop up when health is zero!
 				endGame("Game Over");
 			}
-			if(i == Life.Length){ // if lives ran out... (would read 0)
+			if(i == 3){ // if lives ran out... (would read 0)
 				reallyEndGame("Starting from the beginning...");
 			}
+	}
+
+	public IEnumerator colorLoop () {
+		for(a = 0; a < groundColor.Length; a++){
+			discoFloor.GetComponent<Renderer>().material.color = groundColor[a];
+			yield return new WaitForSeconds(colorChange);
+		}
 	}
 
 	void Update(){		

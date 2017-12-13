@@ -19,7 +19,7 @@ public class replay : MonoBehaviour {
 	}
 
 	public void Click(){
-		if(health.i == health.Life.Length){
+		if(health.i == 3){
 			player.position = new Vector3(-81,10,-55); // puts character back at beginning of level
 			health.i = 0;
 			gameReallyOverUI.SetActive(false);
