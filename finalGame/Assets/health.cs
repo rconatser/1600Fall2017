@@ -15,7 +15,7 @@ public class health : MonoBehaviour {
 	public static int i = 0;
 	public Text numberLives;
 	public GameObject gameReallyOverUI;
-	public int[] Life = {3,2,1,0};
+	public static int[] Life = {3,2,1,0};
 	public Color[] lifeColors = new Color[4]; // creates an array to hold the 4 Colors used for health bar color/lives text
 	void Start(){
 		lifeColors[0] = new Color(19f/255f,189f/255f,0f,1f); // deepish green color
@@ -45,7 +45,8 @@ public class health : MonoBehaviour {
 				StartCoroutine(instaDie());
 				break;
 			case powerUpType.Win:
-				endGame("You Win!");
+				i = Life.Length;
+				reallyEndGame("You Win!");
 				break;
 		}
 	}
@@ -55,7 +56,6 @@ public class health : MonoBehaviour {
 		if(tempAmount > 1){
 			tempAmount = 1;
 		}
-
 		while(healthBar.fillAmount < tempAmount){
 			healthBar.fillAmount += upAmount; // adds the fillAmount from the barTime
 			yield return new WaitForSeconds(upAmount); // waits for time (object)
@@ -67,35 +67,33 @@ public class health : MonoBehaviour {
 		if(tempAmount < 0){
 			tempAmount = 0;
 		}
-
 		while(healthBar.fillAmount > tempAmount){
 			healthBar.fillAmount -= upAmount; // takes away the fillAmount from the barTime
 			yield return new WaitForSeconds(upAmount); // waits for time (object)
 		}
-
 		if(healthBar.fillAmount == 0){ // will pop up when health is zero!
 			endGame("Game Over");
+		}
+		if(i == Life.Length){ // if lives ran out... (would read 0)
+			reallyEndGame("Starting from the beginning...");
 		}
 	}
 
 	public IEnumerator instaDie(){
 		healthBar.fillAmount -= instantDeath;
 		yield return new WaitForSeconds(instantDeath);
-
-		if(healthBar.fillAmount == 0){ // will pop up when health is zero!
-			endGame("Game Over");
-		}
+			if(healthBar.fillAmount == 0){ // will pop up when health is zero!
+				endGame("Game Over");
+			}
+			if(i == Life.Length){ // if lives ran out... (would read 0)
+				reallyEndGame("Starting from the beginning...");
+			}
 	}
 
 	void Update(){		
 		if(i <= 3){
 			numberLives.color = lifeColors[i];
 			numLives(Life[i].ToString()); // converts life (int) array to string so it can be read by numberLives.text
-		}
-		if(i == 3){ // if lives ran out... (would read 0)
-			moveCharacter.gameOver = true;
-			gameReallyOver.text = "Starting from the beginning...";
-			gameReallyOverUI.SetActive(true);
 		}
 	}
 
@@ -107,5 +105,11 @@ public class health : MonoBehaviour {
 
 	public void numLives(string _text){ 
 		numberLives.text = _text;
+	}
+
+	public void reallyEndGame(string _text){
+		gameReallyOver.text = _text;
+		gameReallyOverUI.SetActive(true);
+		moveCharacter.gameOver = true;
 	}
 }
