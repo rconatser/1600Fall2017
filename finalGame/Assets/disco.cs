@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class disco : MonoBehaviour {
 	public GameObject discoFloor;
-	int i = 0;
+	public int i = 0;
 	public float colorChange = 1f; // 1 second
 	public Color[] groundColor = {Color.yellow, Color.green, Color.cyan, Color.blue, Color.white}; // creates another array for ground color later in level
 
